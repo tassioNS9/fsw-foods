@@ -6,8 +6,6 @@ import { StarIcon } from "lucide-react";
 import DeliveryInfo from "@/app/_components/delivery-info";
 import ProductList from "@/app/_components/product-list";
 import CartBanner from "./_components/cart-banner";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/_lib/auth";
 
 interface RestaurantPageProps {
   params: {
