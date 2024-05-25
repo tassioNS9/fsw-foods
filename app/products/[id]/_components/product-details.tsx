@@ -56,7 +56,7 @@ const ProductDetails = ({
   const { addProductToCart, products } = useContext(CartContext);
 
   const addToCart = ({ emptyCart }: { emptyCart?: boolean }) => {
-    addProductToCart({ product, quantity, emptyCart });
+    addProductToCart({ product: { ...product, quantity }, emptyCart });
     setIsCartOpen(true);
   };
 
@@ -95,6 +95,7 @@ const ProductDetails = ({
               src={product.restaurant.imageUrl}
               alt={product.restaurant.name}
               fill
+              sizes="100%"
               className="rounded-full object-cover"
             />
           </div>
@@ -157,6 +158,7 @@ const ProductDetails = ({
           <h3 className="px-5 font-semibold">Sucos</h3>
           <ProductList products={complementaryProducts} />
         </div>
+
         <div className="mt-6 px-5">
           <Button
             className="w-full font-semibold"
